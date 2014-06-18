@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var path = require('path');
-var favicon = require('static-favicon');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -13,11 +13,12 @@ module.exports = function(app, config) {
     function compile(str, path) {
         return stylus(str).set('filename', path);
     }
+
     // view engine setup
     app.set('views', path.join(config.rootPath , '/server/views'));
     app.set('view engine', 'jade');
 
-    app.use(favicon());
+    app.use(favicon(path.join(config.rootPath,'/public/favicon.ico')));
     app.use(logger('dev'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded());
