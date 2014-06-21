@@ -15,7 +15,7 @@ module.exports = function(app, config) {
     }
 
     // view engine setup
-    app.set('views', path.join(config.rootPath , '/server/views'));
+    app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
 
     app.use(favicon(path.join(config.rootPath,'/public/favicon.ico')));
@@ -23,8 +23,12 @@ module.exports = function(app, config) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded());
     app.use(cookieParser());
-    app.use(require('stylus').middleware(path.join(config.rootPath , 'public')));
-    app.use(express.static(path.join(config.rootPath , 'public')));
+    app.use(stylus.middleware(
+        {
+            src: config.rootPath + '/public',
+            compile: compile
+        }
+    ));
+    app.use(express.static(config.rootPath + '/public'));
 
-
-}
+};

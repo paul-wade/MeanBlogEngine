@@ -15,4 +15,4 @@ module.exports = {
         db: 'mongodb://e:e@ds053178.mongolab.com:53178/meanblogengine',
         port: process.env.PORT || 80
     }
-}
+};
