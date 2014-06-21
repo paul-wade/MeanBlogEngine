@@ -2,8 +2,10 @@
 
 /* Controllers */
 
-angular.module('mbApp').controller('mbPostsCtrl',  function($scope) {
+angular.module('mbApp').controller('mbPostsCtrl',  function($scope,PostService) {
 
-        $scope.test = 'test scope obj';
+    PostService.query(function(response){
+        $scope.posts = response;
+    });
 
-    } );
+});

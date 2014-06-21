@@ -20,7 +20,7 @@ var Post = mongoose.model('Post', postSchema);
 function createDefaultPosts() {
     Post.find({}).exec(function(err, collection) {
         if(collection.length === 0) {
-            Post.create({title: 'C# for Sociopaths', featured: true, published: new Date('10/5/2013'), tags: ['C#']});
+            Post.create({title: 'C# for Sociopaths', featured: true, published: new Date('10/5/2013'), tags: ['C#'], body: '<h1>iegfeifgieugfieugh</h1>fieugfieugfieugfieugfiuegfiuegfiegfieugfieugfiegfiegfiegfiuehfiuehfiuehfiuehfiehfiegfieugfieugfiegfiegfieugfiegfeiugfeigufeiufhgieuhfeohfoehfoehfoehfoiehfoeihfoehfoeihfoiehf'});
             Post.create({title: 'C# for Non-Sociopaths', featured: true, published: new Date('10/12/2013'), tags: ['C#']});
             Post.create({title: 'Super Duper Expert C#', featured: false, published: new Date('10/1/2013'), tags: ['C#']});
             Post.create({title: 'Visual Basic for Visual Basic Developers', featured: false, published: new Date('7/12/2013'), tags: ['VB']});
