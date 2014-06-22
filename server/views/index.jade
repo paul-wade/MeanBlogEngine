@@ -11,6 +11,10 @@ block main-content
                     li
                         a(href="/posts") Posts
     section.content
-        div(ng-view)
+        .row
+            .col-xs-10
+                div(ng-view)
+            .col-xs-2
+                div(ng-include="'/partials/sidebar/sidebar-about'")
     footer.container.text-center
         p &copy; 2014 Mean Blog Engine
