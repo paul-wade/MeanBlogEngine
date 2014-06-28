@@ -2,7 +2,7 @@
  * Created by paul on 6/16/14.
  */
 var mongoose = require('mongoose'),
-    postModel = require('../models/Post');
+    postModel = require('../models/post');
 
 module.exports = function(config) {
     mongoose.connect(config.db);
