@@ -6,7 +6,7 @@ var rootPath = path.normalize(__dirname + '/../../');
 
 module.exports = {
     development: {
-        db: 'mongodb://'+process.env.IP +'/meanblogengine',
+        db:   process.env.MONGOLAB_URI || 'mongodb://'+ process.env.IP +'/meanblog',
         rootPath: rootPath,
         port: process.env.PORT || 3003
     } 
