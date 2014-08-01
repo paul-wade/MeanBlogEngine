@@ -39,7 +39,7 @@ function createDefaultPosts() {
             Post.create({title: 'How to Deal with Narcissistic Coworkers', featured: true, published: new Date('2/15/2013'), tags: ['Misc']});
             Post.create({title: 'Death March Coding for Fun and Profit', featured: true, published: new Date('7/1/2013'), tags: ['Coding', 'Misc']});
         }
-    })
+    });
 }
 
 exports.createDefaultPosts = createDefaultPosts;
