@@ -12,9 +12,10 @@
     "express": "~4.2.0",
     "jade": "~1.3.0",
     "mongoose": "^3.8.12",
+    "mongoose-unique-validator": "^0.3.0",
     "morgan": "~1.0.0",
+    "node-logentries": "~0.1.4",
     "serve-favicon": "^2.0.1",
-    "stylus": "0.42.3",
-    "node-logentries": "~0.1.4"
+    "stylus": "0.42.3"
   }
 }
