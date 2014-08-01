@@ -12,7 +12,7 @@ module.exports = function(config) {
         console.log('multivision db opened');
     });
 
-    postModel.createDefaultPosts();
+    postModel.createDefaultPosts();   
 };
 
 

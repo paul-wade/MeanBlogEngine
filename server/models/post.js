@@ -2,9 +2,10 @@
  * Created by paul on 6/16/14.
  */
 var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 
 var postSchema = mongoose.Schema({
-    title: {type:String, required:'{PATH} is required!'},
+    title: {type:String, required:'{PATH} is required!', unique: true},
     featured: {type:Boolean, required:'{PATH} is required!'},
     published: {type:Date, required:'{PATH} is required!'},
     body :{type:String},
@@ -14,6 +15,8 @@ var postSchema = mongoose.Schema({
 postSchema.methods = {
 
 };
+
+postSchema.plugin(uniqueValidator);
 
 var Post = mongoose.model('Post', postSchema);
 
