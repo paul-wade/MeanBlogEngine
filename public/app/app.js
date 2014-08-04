@@ -1,4 +1,4 @@
-angular.module('mbApp', ['ngResource', 'ngRoute','textAngular']);
+angular.module('mbApp', ['ngResource', 'ngRoute','textAngular','ui.bootstrap']);
 
 angular.module('mbApp').config(function($routeProvider, $locationProvider) {
 

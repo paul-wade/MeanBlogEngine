@@ -1,7 +1,35 @@
-form
-    span Title: 
-    input(type="text", ng-model="Title", ng-change="updateId()")  
-    div
-        span FormatedId = {{id}}
-    text-angular( ng-model="Body")
-   
+form.form-horizontal
+    .form-group
+        .col-sm-2
+            label.control-label(for="TitleInput") Post Title
+        .col-sm-10
+            input#TitleInput.form-control(type="text", ng-model="title", ng-change="updateId()",ng-required="true")  
+    .form-group
+        .col-sm-2
+            label(for="SlugInput") Slug
+        .col-sm-10
+            input#SlugInput.form-control(readonly type="text", ng-model="slug")
+    .form-group
+        .col-sm-2   
+            label Featured?
+        .col-sm-10
+            .btn-group
+                button.btn.btn-default(ng-click="featured = true") Yes
+                button.btn.btn-default(ng-click="featured = false") No
+    .form-group
+        .col-sm-2
+            label Date Published
+        .col-sm-10
+            .input-group
+                input.form-control(type="text", datepicker-popup="dd-MMMM-yyyy", ng-model="published", is-open="opened")
+                span.input-group-btn
+                    button.btn.btn-default.glyphicon.glyphicon-calendar(type="button",ng-click="open($event)")
+    .form-group
+        .col-sm-12
+            br
+    .form-group
+        .col-sm-12
+            text-angular(ng-model="body")
+    .form-group
+        .col-sm-12
+            button.btn.btn-default.pull-right(ng-click="Submit()") Post

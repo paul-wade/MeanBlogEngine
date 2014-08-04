@@ -5,5 +5,6 @@
 var posts = require('../controllers/posts');
 
 module.exports = function(app) {
-    app.get('/api/posts',  posts.getPosts);
+    app.get('/api/post', posts.getPosts);
+    app.put('/api/post',posts.createPost);
 };
